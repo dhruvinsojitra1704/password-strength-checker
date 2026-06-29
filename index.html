@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Password Strength Checker</h1>
+
+<div class="password-box">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+        onkeyup="checkPassword()">
+
+    <span class="eye" onclick="showPassword()">👁️</span>
+
+</div>
+<div class="strength-box">
+    <div id="strength-bar"></div>
+</div>
+<p id="strength-text">Strength: None</p>
+<ul>
+    <li>Minimum 8 Characters</li>
+    <li>One Capital Letter</li>
+    <li>One Small Letter</li>
+    <li>One Number</li>
+    <li>One Special Character</li>
+</ul>
+
+<br><br>
+
+<button onclick="checkPassword()">Check Password</button>
+<button onclick="resetForm()">Reset</button>
+<button onclick="generatePassword()">Generate Strong Password</button>
+<button onclick="copyPassword()">Copy Password</button>
+<p id="result"></p>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
